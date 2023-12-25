@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+        #availableFieldsList, #displayedFieldsList {
+            height: 150px;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Display</h1>
+
+        <div class="form-group">
+            <label for="fileInput">Step 1: Select File (JSON or CSV)</label>
+            <input type="file" class="form-control-file" id="fileInput">
+        </div>
+
+        <div id="csvOptions" style="display: none;">
+            <div class="form-group">
+                <label for="characterEncoding">Character Encoding</label>
+                <input type="text" class="form-control" id="characterEncoding">
+            </div>
+            <div class="form-group">
+                <label for="delimiter">Delimiter</label>
+                <input type="text" class="form-control" id="delimiter">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="hasHeader">
+                <label class="form-check-label" for="hasHeader">Has Header</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="availableFieldsList">Available Fields</label>
+                <select multiple class="form-control" id="availableFieldsList">
+                </select>
+            </div>
+            <div class="col">
+                <label for="displayedFieldsList">Fields to be Displayed</label>
+                <select multiple class="form-control" id="displayedFieldsList">
+                </select>
+            </div>
+        </div>
+        <div class="mt-2">
+            <button id="addBtn" class="btn btn-primary">>></button>
+            <button id="removeBtn" class="btn btn-primary"><<</button>
+        </div>
+        <button id="displayBtn" class="btn btn-success mt-3">Step 4: Display</button>
+
+        <table class="table table-striped mt-3" id="dataTable" style="display: none;">
+            <thead>
+                <tr id="tableHeader">
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="process.js">
+        
+    </script>
+</body>
+</html>
